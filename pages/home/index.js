@@ -1,7 +1,8 @@
-export default function home() {
+import PartyBox from "../../components/Party/PartyBox";
+
+export default function home()
+{
     return (
-        <div>
-            
-        </div>
+        <PartyBox />
     )
 }
