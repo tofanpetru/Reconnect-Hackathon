@@ -1,10 +1,20 @@
-import Layout from '../components/UI/layout'
+import React from 'react'
 import '../styles/globals.css'
 
-export default function MyApp({ Component, pageProps }) {
-  return(
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-  )
+function MyApp({ Component, pageProps })
+{
+  React.useEffect(() =>
+  {
+    // Remove the server-side injected CSS.
+    const jssStyles = document.querySelector('#jss-server-side');
+    if (jssStyles)
+    {
+      jssStyles.parentElement.removeChild(jssStyles);
+    }
+  }, []);
+
+  return 
+  <Layout>
+    <Component {...pageProps} />
+  </Layout>
 }
